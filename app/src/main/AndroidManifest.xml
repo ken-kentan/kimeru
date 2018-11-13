@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="jp.kentan.cookpad2018">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/kimeru_rogo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/kimeru_rogo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".ui.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.user.entry.UserEntryActivity" />
+        <activity
+            android:name=".ui.group.detail.GroupDetailActivity"
+            android:label="@string/title_activity_group_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.group.recipe.RecommendRecipeActivity" />
+        <activity android:name=".ui.group.create.GroupCreateActivity" />
+        <activity android:name=".ui.link.LinkActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" android:host="cookpad2018.com" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
